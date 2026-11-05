@@ -20,6 +20,12 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #14172b; }
   will-change: transform;
 }
 .card.leaving { transition: transform .3s ease-out; }
+@media (max-width: 600px) {
+  .stack {
+    width: min(100vw - 32px - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px), (100dvh - 48px - env(safe-area-inset-top, 0px) - 16px) * 9 / 16);
+    aspect-ratio: 9 / 16;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   .card, .card.leaving { transition-duration: .01s; }
 }
