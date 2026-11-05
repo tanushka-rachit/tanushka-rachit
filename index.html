@@ -8,7 +8,7 @@
 html, body { height: 100%; margin: 0; overflow: hidden; background: #14172b; }
 .stack {
   position: absolute; top: calc(48px + env(safe-area-inset-top, 0px)); left: 50%; transform: translateX(-50%);
-  width: min(1080px, 100vw, 100dvh - 48px - env(safe-area-inset-top, 0px)); aspect-ratio: 1 / 1;
+  width: min(1080px, 100vw - 32px - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px), (100dvh - 48px - env(safe-area-inset-top, 0px)) * 16 / 9); aspect-ratio: 16 / 9;
   cursor: pointer; outline: none;
   -webkit-tap-highlight-color: transparent; user-select: none; touch-action: manipulation;
 }
