@@ -10,7 +10,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #14172b; }
   position: absolute; top: calc(48px + env(safe-area-inset-top, 0px)); left: 50%; transform: translateX(-50%);
   width: min(1080px, 100vw - 32px - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px), (100dvh - 48px - env(safe-area-inset-top, 0px)) * 16 / 9); aspect-ratio: 16 / 9;
   cursor: pointer; outline: none;
-  -webkit-tap-highlight-color: transparent; user-select: none; touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent; user-select: none; touch-action: none;
 }
 .stack:focus-visible { outline: 4px solid rgba(255,255,255,.8); outline-offset: -8px; }
 .card {
@@ -20,6 +20,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #14172b; }
   will-change: transform;
 }
 .card.leaving { transition: transform .3s ease-out; }
+.card.dragging { transition: none; }
 @media (max-width: 600px) {
   .stack {
     width: min(100vw - 32px - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px), (100dvh - 48px - env(safe-area-inset-top, 0px) - 16px) * 9 / 16);
@@ -58,12 +59,15 @@ function layout() {
   });
 }
 
-function next() {
+// dir: 1 = off to the right (default for taps), -1 = off to the left
+function next(dir) {
   if (busy) return;
+  dir = dir === -1 ? -1 : 1;
   busy = true;
   var top = els[order[0]];
+  top.classList.remove("dragging");
   top.classList.add("leaving");
-  top.style.transform = "translateX(110%) rotate(6deg)";
+  top.style.transform = "translateX(" + (dir * 110) + "%) rotate(" + (dir * 6) + "deg)";
   setTimeout(function () {
     top.classList.remove("leaving");
     order.push(order.shift());
@@ -72,9 +76,45 @@ function next() {
   }, 300);
 }
 
-stack.addEventListener("click", next);
+// Tap or click = next card; drag/swipe left or right = fling the top card away.
+var dragging = false, moved = false, startX = 0, startT = 0, dx = 0;
+
+stack.addEventListener("pointerdown", function (e) {
+  if (busy || !e.isPrimary || (e.pointerType === "mouse" && e.button !== 0)) return;
+  dragging = true; moved = false; dx = 0;
+  startX = e.clientX; startT = Date.now();
+  try { stack.setPointerCapture(e.pointerId); } catch (err) {}
+});
+
+stack.addEventListener("pointermove", function (e) {
+  if (!dragging) return;
+  dx = e.clientX - startX;
+  var top = els[order[0]];
+  if (!moved && Math.abs(dx) > 8) { moved = true; top.classList.add("dragging"); }
+  if (moved) {
+    top.style.transform = "translateX(" + dx + "px) rotate(" + (dx / stack.offsetWidth * 12) + "deg)";
+  }
+});
+
+function endDrag(e, cancelled) {
+  if (!dragging) return;
+  dragging = false;
+  var top = els[order[0]];
+  if (!moved) { if (!cancelled) next(1); return; }
+  top.classList.remove("dragging");
+  var elapsed = Math.max(Date.now() - startT, 1);
+  var fast = Math.abs(dx) / elapsed > 0.5;
+  if (!cancelled && (Math.abs(dx) > stack.offsetWidth * 0.25 || fast)) {
+    next(dx < 0 ? -1 : 1);
+  } else {
+    top.style.transform = "none"; // snap back
+  }
+}
+stack.addEventListener("pointerup", function (e) { endDrag(e, false); });
+stack.addEventListener("pointercancel", function (e) { endDrag(e, true); });
+
 stack.addEventListener("keydown", function (e) {
-  if (e.key === "Enter" || e.key === " ") { e.preventDefault(); next(); }
+  if (e.key === "Enter" || e.key === " ") { e.preventDefault(); next(1); }
 });
 layout();
 </script>
