@@ -1,0 +1,158 @@
+<title>Jaipur Design Festival Programme</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=DM+Sans:wght@400;500&display=swap">
+<style>
+:root{--bg:#fff;--ink:#1d1b3a;--mute:#6b6a80;--line:#e6e3ee;--field:#faf9fd;--forum:#2b2a6b;--forum-t:#fff;--break:#f1eef6;--break-t:#4a4863;--work:#f6b73c;--work-t:#3a2600;--exh:#e4467c;--exh-t:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14132a;--ink:#ecebf7;--mute:#a09fb8;--line:#2d2b4d;--field:#1d1c3a;--forum:#5b59d6;--break:#24224a;--break-t:#c9c7e4;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14132a;--ink:#ecebf7;--mute:#a09fb8;--line:#2d2b4d;--field:#1d1c3a;--forum:#5b59d6;--break:#24224a;--break-t:#c9c7e4;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.5 'DM Sans',system-ui,sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:24px 16px 48px}
+h1{font:700 clamp(26px,5vw,40px)/1.1 'Bricolage Grotesque',system-ui,sans-serif;margin:0 0 6px;outline:none}
+.sub{color:var(--mute);margin:0 0 20px;outline:none}
+[contenteditable]:focus{box-shadow:0 0 0 2px var(--exh);border-radius:4px}
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:16px;overflow-x:auto}
+.tab{font:500 15px 'DM Sans',system-ui,sans-serif;background:none;color:var(--mute);border:0;border-bottom:3px solid transparent;padding:10px 14px;cursor:pointer;white-space:nowrap}
+.tab.on{color:var(--ink);border-bottom-color:var(--exh)}
+.hs{overflow-x:auto;border-bottom:1px solid var(--line)}
+.hg{position:relative}
+.hh{position:relative;height:26px;margin-left:104px}
+.hh span{position:absolute;top:6px;transform:translateX(-50%);font-size:12px;color:var(--mute);white-space:nowrap}
+.hr{display:flex;border-top:1px solid var(--line)}
+.vl{position:sticky;left:0;z-index:2;flex:none;width:104px;padding:8px 8px 8px 4px;font:500 13px 'DM Sans',sans-serif;color:var(--mute);background:var(--bg);display:flex;align-items:center}
+.hp{position:relative;flex:none}
+.blk{position:absolute;border-radius:8px;padding:6px 10px;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:1px}
+.blk b{font:700 17px/1.2 'Bricolage Grotesque',system-ui,sans-serif}
+.blk.has b{font-size:15px}
+.blk small{font-size:12px;opacity:.85}
+.blk .d{font-size:12px;line-height:1.3;opacity:.85;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.forum{background:var(--forum);color:var(--forum-t)}
+.break{background:var(--break);color:var(--break-t)}.break b{font-weight:500;font-size:15px}
+.work{background:var(--work);color:var(--work-t)}
+.exh{background:var(--exh);color:var(--exh-t)}
+.empty{color:var(--mute);padding:24px 0}
+.edit{margin-top:32px;border-top:1px solid var(--line);padding-top:16px}
+.edit h2{font:700 18px 'Bricolage Grotesque',sans-serif;margin:0 0 12px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+input,select,textarea{font:400 14px 'DM Sans',sans-serif;color:var(--ink);background:var(--field);border:1px solid var(--line);border-radius:6px;padding:7px 9px;min-width:0}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--exh);outline-offset:0}
+.t{flex:2 1 180px}.v{flex:1 1 130px}.k{flex:0 0 auto}.tm{flex:0 0 auto}
+.row .f{flex:1 1 140px}.row .d{flex:2 1 220px}
+.x,.add{font:500 14px 'DM Sans',sans-serif;background:none;color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:7px 12px;cursor:pointer}
+.x:hover,.add:hover{border-color:var(--exh)}
+.err{color:#d6336c;font-size:12px;flex-basis:100%}
+.add{margin-top:12px}
+.note{color:var(--mute);font-size:13px;margin:12px 0 0}
+.det{margin-top:32px}
+.det h2{font:700 18px 'Bricolage Grotesque',sans-serif;margin:0 0 4px}
+.dt{padding:16px 0;border-bottom:1px solid var(--line)}
+.dt h3{font:700 18px/1.2 'Bricolage Grotesque',system-ui,sans-serif;margin:0 0 2px}
+.dt .dm{color:var(--mute);font-size:13px;margin:0 0 8px}
+.dt p{margin:0 0 8px;max-width:68ch}
+.dt ul{list-style:none;margin:8px 0 0;padding:0}
+.dt li{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,2fr) minmax(0,1fr);gap:4px 16px;padding:8px 0;border-top:1px solid var(--line);font-size:14px}
+.dt li b{font-weight:500}
+.dt li span{color:var(--mute)}
+.dt li em{font-style:normal}
+.row .more{flex-basis:100%}
+.row .more summary{cursor:pointer;color:var(--mute);font-size:13px}
+.row textarea{width:100%;margin-top:6px;resize:vertical}
+@media (max-width:640px){.dt li{grid-template-columns:minmax(0,1fr)}}
+@media print{.edit,.tabs{display:none}.hs{overflow:visible}}
+</style>
+<div class="wrap">
+<h1 id="h1" contenteditable="true" spellcheck="false">Jaipur Design Festival 2026</h1>
+<p class="sub" id="sub" contenteditable="true" spellcheck="false">Programme · 16–18 November 2026</p>
+<div class="tabs" id="tabs" role="tablist"></div>
+<div id="grid"></div>
+<section class="det" id="det"></section>
+<section class="edit">
+<h2>Edit this day</h2>
+<div id="list"></div>
+<button class="add" id="add">Add session</button>
+<p class="note">Changes show in the schedule instantly and stay in this browser. The title and subtitle above are editable too. To share the infographic, take a screenshot or print the page to PDF.</p>
+</section>
+<datalist id="vl"></datalist>
+</div>
+<script>
+var KEY='jdf-schedule-v3',ALL='All venues',cur=0,VO=['Krishnayan','Surekh','Sudarshan','Madhyavarti','Alankar','Sukriti'];
+var KINDS={forum:'Forum or talk',work:'Workshop',exh:'Exhibition',break:'Break'};
+function S(t,v,k,s,e,f,d,p){return{t:t,v:v,k:k,s:s,e:e,f:f||'',d:d||'',p:p||''}}
+var state={title:'Jaipur Design Festival 2026',sub:'Programme · 16–18 November 2026',days:[
+{label:'Mon 16 Nov',sessions:[S('Forum 1: Education by Design','Krishnayan','forum','10:00','13:00','','Learn, Teach, & Prepare for future',"This forum explores how design education can move beyond teaching skills and techniques to develop observation, curiosity, critical thinking, empathy, experimentation, collaboration and the ability to work with complexity.\nKeynote||Can design change the way we learn, teach and prepare for the future?||Mr. Jinan KB\nDesigning the Learner, Not Just the Classroom||How can design thinking, making and problem-solving transform school education?||Ms. Manisha Mohan\nFrom Rote to Creative Intelligence||Creativity, critical thinking, AI and the skills young people will need for an uncertain future.||Mr. Sandeep Sethi\nLearning from the Real World||How schools, design institutes, industry, craftspeople and communities can become learning ecosystems.||Mr. Phani Tetali\nModerator||||Ms. Lolita Dutta"),S('Networking lunch','Sukriti','break','13:00','14:00'),S('Forum 2: Circular Jaipur','Krishnayan','forum','14:00','17:00','','Sustainability and circularity',"This forum looks at the possibility of moving from a linear model of take–make–use–discard towards circular ways of designing, producing and consuming. Rather than treating sustainability as an isolated environmental concern, the forum asks how circular thinking can become embedded in the everyday functioning of the city—and how designers can help create systems that are economically viable, socially inclusive and regenerative.\nKeynote||Can we design a city where nothing is wasted?||Mr. Dileep Baid\nWaste is a Design Failure||Rethinking packaging, consumption, segregation, recycling and the systems that create waste.||Mr. Gaurav Shorey\nThe Second Life of Things||Upcycling, repair, reuse, material innovation and the new circular economy.||Mr. Radhesh Agrahari\nDesigning a Regenerative City||Can waste become a resource for livelihoods, public spaces, architecture and industry?||Dr. Vivek S. Agrawal\nModerator||||Ms. Meenakshi Singh"),S('Networking tea','Sukriti','break','17:00','18:00'),S('Workshop 1: The Art of Seeing','Surekh','work','10:00','13:00','Keya Vaswani','Film Making (Visual Story Telling, Mobile film making & Editing)'),S('Workshop 2: 50 Seats, 50 Stories','Surekh','work','14:00','17:00','Sana Soni','First session'),S('Workshop 3: Designed storytelling using five senses','Surekh','work','14:00','17:00','Mannat','Observe, interpret, and communicate stories through multiple sensory layers'),S('Friends of Figma Makeathon','Sudarshan','work','10:00','18:00','','Sustainability, Circularity'),S('Open exhibition','Alankar','exh','10:00','18:00')]},
+{label:'Tue 17 Nov',sessions:[S('Networking tea','Sukriti','break','09:00','10:00'),S('Forum 3: Crafting Identity','Krishnayan','forum','10:00','13:00','','',"Jaipur's identity is deeply connected to its crafts, materials, techniques, architecture, textiles, jewellery, visual culture and communities of makers. This forum explores how craft and cultural knowledge can remain economically viable, relevant and meaningful while evolving for contemporary life. The larger question is how Jaipur can celebrate its cultural richness without turning it into a museum piece—and how design can help craft become a living, evolving and future-facing part of the city's identity and economy.\nKeynote||How can design help Jaipur's craft, culture and identity remain alive rather than simply preserved?||Ms. Mamta Mansingka\nFrom Craft to Contemporary||How can traditional skills evolve into products, experiences and ideas relevant to today's world?||Ms. Geetanjali Kasliwal\nWho Owns a Culture?||Authenticity, appropriation, intellectual property and the ethics of using cultural traditions in contemporary design.||Ms. Meera Goradia, Mr. Ishwar Singh\nDesigning the Jaipur Brand||Beyond pink buildings and tourism clichés—what should Jaipur's visual and cultural identity be in the future?||Mr. Chandrashekhar Bheda\nModerator||||Mr. Niraj Shah"),S('Networking lunch','Sukriti','break','13:00','14:00'),S('Forum 4: The City We Make','Krishnayan','forum','14:00','17:00','','',"This forum asks: What kind of Jaipur are we collectively making? It opens a conversation around public spaces, mobility, architecture, housing, infrastructure, heritage, streets, neighbourhoods and the relationship between the historic city and its expanding contemporary landscape. Speakers can examine how design can make the city more accessible, liveable, inclusive and responsive to its people while respecting its distinctive character.\nKeynote||Who gets to design the city and what kind of Jaipur do we want to create?||Mr. Naresh Narsimhan\nA City for People||Inclusive, accessible, climate-responsive and beautiful neighbourhoods—and the role of designers in creating them.||Ms. Manisha Sharma\nOld City, New Life||How can heritage and contemporary life coexist without turning heritage into a museum?||Mr. Gagan Sharma\nWho Owns the Street?||Designing streets and public spaces for pedestrians, vendors, children, cyclists, cars and communities.||Ms. Kavita Jain\nModerator||||Ms. Preethi Agrawal"),S('Networking tea','Sukriti','break','17:00','18:00'),S('Workshop 4: Stories in Thread','Surekh','work','10:00','13:00','Sana Soni','Embroidery workshop'),S('Workshop 5: Character design and Storytelling','Surekh','work','10:00','13:00','Phani Tetali','Approach towards character design as an integral part of storytelling'),S('Workshop 6: What Children Can Teach Us About Learning, Making and Knowing','Surekh','work','14:00','17:00','Jinan K. B.','Retaining the Designer in the Child; Reawakening the Child in the Adult'),S('Workshop 7: The AHA Moment','Surekh','work','14:00','17:00','Niraj Shah','Creative Thinking Workshop'),S('Open exhibition','Alankar','exh','09:00','18:00'),S('Mentor Connect','Sudarshan','work','09:00','13:00'),S('Mentor Connect','Sudarshan','work','14:00','18:00')]},
+{label:'Wed 18 Nov',sessions:[S('Networking tea','Sukriti','break','09:00','10:00'),S('Forum 5: Design Industry & Enterprise','Krishnayan','forum','10:00','13:00','','',"This forum explores how stronger connections between designers, businesses, manufacturers, entrepreneurs, craft communities and institutions can create new value for Jaipur's economy and strengthen its creative ecosystem. It can also explore the opportunities for designers to become entrepreneurs and for industry to engage more meaningfully with design education and emerging talent. With Jaipur's strengths in craft, textiles, jewellery, furniture, hospitality, tourism, manufacturing and creative enterprise, the forum asks how the city can develop a more visible and connected design-led economy.\nKeynote||Can design become a powerful engine for business, entrepreneurship and Jaipur's creative economy?||Ms. Leela Bordia\nJaipur to the World — Creating a Competitive Creative Economy||How can Jaipur leverage its strengths in craft, textiles, jewellery, furniture, architecture, hospitality, tourism and creative enterprise to build businesses and brands with national and global relevance||Mr. Ayush Kasliwal\nFrom Designer to Entrepreneur- Building the Next Generation of Design-led Businesses||Understanding how can designers turn creative ideas into viable brands, products, services and intellectual property.||Mr. Chintan Bakshi\nDesign as a Business Strategy||Exploring product development, brand building, customer experience, service design and the role of designers in business decision-making||Ms. Shilpa Sharma\nModerator||||Ms. Sonal Chitranshi"),S('Networking lunch','Sukriti','break','13:00','14:00'),S('Forum 6: The Future of Design','Krishnayan','forum','14:00','17:00','','',"Design itself is changing rapidly. This forum looks ahead and asks what the profession might become and what responsibilities designers will carry in a world of accelerating change. Rather than predicting a single future, the forum aims to open a conversation about multiple possible futures and the role designers can play in shaping them consciously and responsibly.\nKeynote||When AI can design, generate and make almost anything, what is the role of the human designer?||Mr. Ayaz Basrai\nWhat Should We Design?||Moving from designing more things to designing better systems, experiences, relationships and futures.||Mr. Sujay Zwende\nDesigning for a World We Cannot Predict||Climate change, new technologies, demographic shifts and radically changing lifestyles||Mr. Nevadan Rathi\nDesign After AI||What happens to creativity, authorship and the role of the designer when machines can generate?||Mr. Sukanto Roy\nModerator||||Ms. Keya Vaswani"),S('Networking tea','Sukriti','break','17:00','18:00'),S('Workshop 8: Hands-on Experience','Surekh','work','10:00','13:00','Vikram Joshi'),S('Workshop 9: Understanding the "Law" of Design','Surekh','work','10:00','13:00','Sahibnoor Singh Sidhu','Related to the laws like (Copyright, Import/Export, Intellectual Property, Trademark, Dispute Resolution)'),S('Workshop 10: 50 Seats, 50 Stories','Surekh','work','14:00','17:00','Sana Soni','Second session'),S('Workshop 11: Metalscape','Surekh','work','14:00','17:00','Kamlesh Dal','Jewellery Design Workshop'),S('Open exhibition','Alankar','exh','09:00','18:00'),S('Mentor Connect','Sudarshan','work','09:00','13:00'),S('Mentor Connect','Sudarshan','work','14:00','18:00')]}]};
+try{var sv=JSON.parse(localStorage.getItem(KEY));if(sv&&sv.days&&sv.days.length===3)state=sv}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
+function m(t){var p=(t||'').split(':');return p.length<2?NaN:+p[0]*60+ +p[1]}
+function fmt(x){var h=Math.floor(x/60)%24,mm=x%60;return(h%12||12)+(mm?':'+(mm<10?'0':'')+mm:'')+' '+(h<12?'am':'pm')}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function ok(x){return m(x.e)>m(x.s)}
+function ov(p,q){return p.v===q.v&&m(p.s)<m(q.e)&&m(q.s)<m(p.e)}
+function bl(x){var t=x.d;if(!t&&x.p){var ls=x.p.split('\n');for(var i=0;i<ls.length;i++)if(ls[i].trim()&&ls[i].indexOf('||')<0){t=ls[i].trim();break}}return t||''}
+function det(){
+var el=document.getElementById('det'),ss=state.days[cur].sessions.filter(function(x){return x.p&&ok(x)}).sort(function(a,b){return m(a.s)-m(b.s)});
+if(!ss.length){el.innerHTML='';return}
+el.innerHTML='<h2>Session details</h2>'+ss.map(function(x){var ps='',rows='';
+x.p.split('\n').forEach(function(l){l=l.trim();if(!l)return;
+if(l.indexOf('||')>=0){var c=l.split('||').map(function(s){return s.trim()});rows+='<li><b>'+esc(c[0])+'</b><span>'+esc(c[1]||'')+'</span><em>'+esc(c[2]||'')+'</em></li>'}else ps+='<p>'+esc(l)+'</p>'});
+return'<article class="dt"><h3>'+esc(x.t)+'</h3><p class="dm">'+fmt(m(x.s))+' – '+fmt(m(x.e))+' · '+esc(x.v)+'</p>'+ps+(rows?'<ul>'+rows+'</ul>':'')+'</article>'}).join('')
+}
+function bk(x,left,w,top,ht){var dd=bl(x),has=x.f||dd;return'<div class="blk '+x.k+(has?' has':'')+'" title="'+esc([x.t,x.f,dd].filter(Boolean).join(' · '))+'" style="left:'+left+'px;width:'+w+'px;top:'+top+'px;height:'+ht+'px"><b>'+esc(x.t)+'</b><small>'+(x.f?esc(x.f)+' · ':'')+fmt(m(x.s))+' – '+fmt(m(x.e))+'</small>'+(dd?'<span class="d">'+esc(dd)+'</span>':'')+'</div>'}
+function grid(){
+det();
+var el=document.getElementById('grid'),ss=state.days[cur].sessions.filter(ok).sort(function(a,b){return m(a.s)-m(b.s)});
+if(!ss.length){el.innerHTML='<p class="empty">No sessions for this day yet. Add one below.</p>';return}
+var vs=[];ss.forEach(function(x){if(x.v&&x.v!==ALL&&vs.indexOf(x.v)<0)vs.push(x.v)});
+vs.sort(function(p,q){var i=VO.indexOf(p),j=VO.indexOf(q);return(i<0?99:i)-(j<0?99:j)});
+if(!vs.length)vs.push('Main stage');
+var LN=[],NN=[];
+ss.forEach(function(x,j){var u=[];if(vs.indexOf(x.v)>=0)for(var k=0;k<j;k++)if(ov(ss[k],x))u.push(LN[k]);var l=0;while(u.indexOf(l)>-1)l++;LN[j]=l});
+ss.forEach(function(x,j){var mx=LN[j];if(vs.indexOf(x.v)>=0)ss.forEach(function(y,k){if(ov(x,y)&&LN[k]>mx)mx=LN[k]});NN[j]=mx+1});
+var LW=104,LH=68,LHT=104,HH=26,a=Math.floor(Math.min.apply(0,ss.map(function(x){return m(x.s)}))/60)*60,b=Math.ceil(Math.max.apply(0,ss.map(function(x){return m(x.e)}))/60)*60,hrs=(b-a)/60;
+var PXH=Math.max(100,Math.floor(((el.clientWidth||900)-LW)/hrs)),W=hrs*PXH;
+var rh=vs.map(function(v){var mx=1,tall=false;ss.forEach(function(x,j){if(x.v===v){if(NN[j]>mx)mx=NN[j];if(x.f||bl(x))tall=true}});return mx*(tall?LHT:LH)}),tot=0;
+rh.forEach(function(r){tot+=r});
+var h='<div class="hs"><div class="hg" style="width:'+(LW+W)+'px"><div class="hh">';
+for(var t=a;t<=b;t+=60)h+='<span style="left:'+(t-a)/60*PXH+'px'+(t===b?';transform:translateX(-100%)':'')+'">'+fmt(t)+'</span>';
+h+='</div>';
+vs.forEach(function(v,r){
+h+='<div class="hr" style="height:'+rh[r]+'px"><div class="vl">'+esc(v)+'</div><div class="hp" style="width:'+W+'px;height:'+rh[r]+'px;background:repeating-linear-gradient(to right,var(--line) 0 1px,transparent 1px '+PXH+'px)">';
+ss.forEach(function(x,j){if(x.v!==v)return;var N=NN[j];h+=bk(x,(m(x.s)-a)/60*PXH+2,(m(x.e)-m(x.s))/60*PXH-4,LN[j]/N*rh[r]+2,rh[r]/N-4)});
+h+='</div></div>'});
+ss.forEach(function(x){if(vs.indexOf(x.v)>=0)return;h+=bk(x,LW+(m(x.s)-a)/60*PXH+2,(m(x.e)-m(x.s))/60*PXH-4,HH+2,tot-4)});
+el.innerHTML=h+'</div></div>';
+}
+function tabs(){
+var el=document.getElementById('tabs');el.innerHTML='';
+state.days.forEach(function(d,i){var b=document.createElement('button');b.className='tab'+(i===cur?' on':'');b.setAttribute('role','tab');b.textContent='Day '+(i+1)+' · '+d.label;b.onclick=function(){cur=i;tabs();grid();list()};el.appendChild(b)})
+}
+function vlist(){
+var vs=[ALL];state.days.forEach(function(d){d.sessions.forEach(function(x){if(x.v&&vs.indexOf(x.v)<0)vs.push(x.v)})});
+document.getElementById('vl').innerHTML=vs.map(function(v){return'<option value="'+esc(v)+'">'}).join('')
+}
+function list(){
+var L=document.getElementById('list');L.innerHTML='';vlist();
+var ss=state.days[cur].sessions;
+if(!ss.length)L.innerHTML='<p class="empty">Nothing scheduled yet.</p>';
+ss.forEach(function(x,i){
+var r=document.createElement('div');r.className='row';
+r.innerHTML='<input class="t" aria-label="Session name"><input class="v" list="vl" aria-label="Venue"><select class="k" aria-label="Type">'+Object.keys(KINDS).map(function(k){return'<option value="'+k+'">'+KINDS[k]+'</option>'}).join('')+'</select><input class="tm s" type="time" aria-label="Start time"><input class="tm e" type="time" aria-label="End time"><input class="f" placeholder="Facilitator" aria-label="Facilitator"><input class="d" placeholder="Description or tagline" aria-label="Description or tagline"><details class="more"><summary>Session details (forums)</summary><textarea class="p" rows="6" aria-label="Session details" placeholder="Paragraph lines first. Speaker lines: Title||Question||Speaker"></textarea></details><button class="x" aria-label="Delete session">Delete</button><span class="err"></span>';
+var q=function(s){return r.querySelector(s)};
+q('.t').value=x.t;q('.v').value=x.v;q('.k').value=x.k;q('.s').value=x.s;q('.e').value=x.e;q('.f').value=x.f||'';q('.d').value=x.d||'';q('.p').value=x.p||'';
+function chk(){q('.err').textContent=ok(x)?'':'End time must be after the start time. This session is hidden until it is fixed.'}
+chk();
+[['.t','t'],['.v','v'],['.k','k'],['.s','s'],['.e','e'],['.f','f'],['.d','d'],['.p','p']].forEach(function(p){q(p[0]).addEventListener('input',function(){x[p[1]]=q(p[0]).value;save();chk();grid()})});
+q('.x').onclick=function(){ss.splice(i,1);save();list();grid()};
+L.appendChild(r)})
+}
+document.getElementById('add').onclick=function(){
+var ss=state.days[cur].sessions,last=ss.length?ss[ss.length-1]:null,s=last&&ok(last)?last.e:'10:00',e=fmtT(m(s)+60);
+ss.push(S('New session',last&&last.v?last.v:'Main stage','forum',s,e));save();list();grid();
+var ins=document.querySelectorAll('#list .t');if(ins.length){ins[ins.length-1].focus();ins[ins.length-1].select()}
+};
+function fmtT(x){x=x%1440;var h=Math.floor(x/60),mm=x%60;return(h<10?'0':'')+h+':'+(mm<10?'0':'')+mm}
+['h1','sub'].forEach(function(id,j){var el=document.getElementById(id),k=j?'sub':'title';el.textContent=state[k];el.addEventListener('input',function(){state[k]=el.textContent;save()})});
+var rz;window.addEventListener('resize',function(){clearTimeout(rz);rz=setTimeout(grid,120)});
+tabs();grid();list();
+</script>
