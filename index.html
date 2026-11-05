@@ -8,25 +8,19 @@
 html, body { height: 100%; margin: 0; overflow: hidden; background: #14172b; }
 .stack {
   position: absolute; top: calc(48px + env(safe-area-inset-top, 0px)); left: 50%; transform: translateX(-50%);
-  width: min(1080px, 100vw - 32px - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px), (100dvh - 48px - env(safe-area-inset-top, 0px)) * 16 / 9); aspect-ratio: 16 / 9;
+  width: min(1080px, 100vw - 32px - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px), (100dvh - 48px - env(safe-area-inset-top, 0px) - 16px) * 9 / 16); aspect-ratio: 9 / 16;
   cursor: pointer; outline: none;
   -webkit-tap-highlight-color: transparent; user-select: none; touch-action: none;
 }
 .stack:focus-visible { outline: 4px solid rgba(255,255,255,.8); outline-offset: -8px; }
 .card {
-  position: absolute; inset: 0; background: var(--c);
+  position: absolute; inset: 0; background: #f3e4d8 center / cover no-repeat;
   box-shadow: -12px 0 40px rgba(10, 12, 30, .3);
   transition: transform .45s cubic-bezier(.3,.8,.3,1);
   will-change: transform;
 }
 .card.leaving { transition: transform .3s ease-out; }
 .card.dragging { transition: none; }
-@media (max-width: 600px) {
-  .stack {
-    width: min(100vw - 32px - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px), (100dvh - 48px - env(safe-area-inset-top, 0px) - 16px) * 9 / 16);
-    aspect-ratio: 9 / 16;
-  }
-}
 @media (prefers-reduced-motion: reduce) {
   .card, .card.leaving { transition-duration: .01s; }
 }
@@ -36,17 +30,20 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #14172b; }
 <div class="stack" id="stack" role="button" tabindex="0" aria-label="Card stack. Activate to move the top card to the back."></div>
 
 <script>
-// Edit this list to change the colors, or add more.
-var colors = ["#f5c542", "#7bd3c0", "#ff8fa3", "#8fa9ff", "#f2f2f7", "#ffb36b"];
+// Edit this list to change the pages, or add more (one image per card, 9:16).
+var pages = [
+  "images/card-1.webp", "images/card-2.webp", "images/card-3.webp",
+  "images/card-4.webp", "images/card-5.webp", "images/card-6.webp"
+];
 
 var stack = document.getElementById("stack");
-var order = colors.map(function (_, i) { return i; });
+var order = pages.map(function (_, i) { return i; });
 var busy = false;
 
-var els = colors.map(function (c) {
+var els = pages.map(function (src) {
   var el = document.createElement("div");
   el.className = "card";
-  el.style.setProperty("--c", c);
+  el.style.backgroundImage = "url(" + src + ")";
   stack.appendChild(el);
   return el;
 });
@@ -54,7 +51,7 @@ var els = colors.map(function (c) {
 function layout() {
   order.forEach(function (id, pos) {
     var el = els[id];
-    el.style.zIndex = colors.length - pos;
+    el.style.zIndex = pages.length - pos;
     el.style.transform = "none";
   });
 }
