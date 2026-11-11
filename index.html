@@ -5,7 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Cards</title>
 <style>
-html, body { height: 100%; margin: 0; overflow: hidden; background: #14172b; }
+html, body {
+  height: 100%; margin: 0; overflow: hidden;
+  /* Tiny lotus-scallop motifs; change the 96px 58px size to scale them up or down. */
+  background: #ecdcae url(images/bg-pattern.webp) 0 0 / 96px 58px repeat;
+}
 .stack {
   position: absolute; top: calc(48px + env(safe-area-inset-top, 0px)); left: 50%; transform: translateX(-50%);
   width: min(1080px, 100vw - 32px - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px), (100dvh - 48px - env(safe-area-inset-top, 0px) - 16px) * 9 / 16); aspect-ratio: 9 / 16;
@@ -15,7 +19,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #14172b; }
 .stack:focus-visible { outline: 4px solid rgba(255,255,255,.8); outline-offset: -8px; }
 .card {
   position: absolute; inset: 0; background: #f3e4d8 center / cover no-repeat;
-  box-shadow: -12px 0 40px rgba(10, 12, 30, .3);
+  box-shadow: -10px 0 32px rgba(70, 40, 10, .35);
   transition: transform .45s cubic-bezier(.3,.8,.3,1);
   will-change: transform;
 }
